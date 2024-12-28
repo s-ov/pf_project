@@ -1,0 +1,25 @@
+{% extends 'users/base_users.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h2 class="mt-4">{{ title }}</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-success">{{ title }}</button>
+            <a class="fw-bold ml-auto" href="{% url 'users:employee_profile' request.user.pk %}">Назад у профіль</a>
+        </div> 
+        
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+{% endblock %}

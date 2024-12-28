@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+
+{% block title %}Вхід із Google{% endblock %}
+
+{% block content %}
+<div class="bg-primary text-white p-4 mt-4 rounded">
+    <h4>Вхід із Google</h4>
+
+    <p>На даній сторінці можна увійти у свій аккаунт через Google.</p>
+
+    {% comment %} <a href="{% provider_login_url 'google' %}?next={{ next }}"
+       class="btn btn-success">
+        Увійти із Google
+    </a> {% endcomment %}
+     <a href="{% provider_login_url 'google' %}?next={{ next|default:'/'|urlencode }}"
+       class="btn btn-success"> 
+        Увійти із Google
+    </a>
+
+</div>
+{% endblock %}

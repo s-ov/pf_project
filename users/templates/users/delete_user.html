@@ -1,0 +1,24 @@
+{% extends 'users/base_users.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="bg-primary text-white p-4 m-2 rounded">
+  
+    <p>Ви впевнені що хочете видалити Ваш профіль? Цю дію потім неможливо буде відмінити.</p>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button class="btn btn-danger" type="submit">Підтвердити видалення</button>
+      <a class="fw-bold" href="{% url 'users:employee_profile' request.user.id %}">Bідмінити</a>
+
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "task/base_task.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content_area %}
+    <div class="col-12">
+        <h4 class="text-center my-4 bg-dark rounded">{{ title }}</h4>
+    </div>
+    <div class="container justify-content-center">
+        <div class="row mb-5">
+            <div class="col-md-6 col-sm-12 text-white">
+
+            <p>{{ message }}</p>
+            <a href="{% url 'assignment:task_doers_list' %}" class="btn btn-success">
+                Назад до Списку електриків
+            </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

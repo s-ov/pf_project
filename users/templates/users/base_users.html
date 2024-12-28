@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Користувачі: {% block users_title %}головна{% endblock %}{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'users/css/users_style.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col">
+            {% block users_content %}
+                        
+            {% endblock %}
+        </div>
+    </div>
+</div>            
+
+{% endblock %}
+
+{% block scripts %}{% endblock scripts %}

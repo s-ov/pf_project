@@ -1,0 +1,40 @@
+{% extends 'users/base_users.html' %}
+{% comment %} {% load socialaccount %} {% endcomment %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container bg-info p-2 mt-5 rounded"> 
+        <h2>{{ title }}</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <button type="submit" class="btn btn-success">Увійти</button>
+        </form>
+
+        <p>
+            <a 
+                href="{% url 'users:check_user' %}"
+                class="">
+                    Забули пароль?
+            </a>
+        </p>
+        {% comment %} <p>
+            <a 
+                href="{% provider_login_url 'google' %}?next={{ next | default:'/' }}"
+                class="">
+                Увійти через Google
+            </a> 
+        </p> {% endcomment %}
+    </div>
+        
+{% endblock %}

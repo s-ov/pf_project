@@ -1,0 +1,33 @@
+{% extends 'users/base_users.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    
+    <div class="container mt-5">
+        <h2>{{ title }}</h2>
+    </div>
+    
+    <div class="bg-primary text-white p-4 m-2 rounded">
+        {% for employee in employees %}
+            <h4>{{ employee.first_name }} {{ employee.last_name }}</h4>
+            <h6>{{ employee.cell_number }}</h6>
+            {% if employee.email %}
+                <h6>{{ employee.email }}</h6>
+            {% else %}
+                <h6>Email: Не вказано</h6>
+            {% endif %}
+            <h5>{{ employee.admission_group }}</h5>
+            <h6>{{ employee.get_role_display }}</h6>
+            <hr />
+    
+        {% endfor %}
+    </div>
+    
+    <div class="d-grid gap-2 d-md-block">
+        <a class="btn btn-success" type="button" href="{% url 'users:update_mobile' %}">Оновити mobile</a>
+        <a class="btn btn-warning" type="button" href="{% url 'users:reset_password' %}">Змінити пароль</a>
+        <a class="btn btn-danger" type="button" href="{% url 'users:delete_account' %}">Видалити профіль</a>
+    </div>
+    
+{% endblock %}

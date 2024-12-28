@@ -1,0 +1,51 @@
+{% extends "task/base_task.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content_area %}
+
+    <div class="col-12 mt-5">
+        {% include 'partials/window_history_back.html' %}
+    </div>
+
+    <div class="col-12">
+        <h4 class="text-center my-4 bg-dark rounded">{{ title }}</h4>
+    </div>
+
+    <div class="container justify-content-center">
+        <div class="row mb-5">
+            <div class="col-md-6 col-sm-12 text-white">
+                <ul class="list-unstyled">
+                {% for task in page_obj %} 
+                    
+                    <li><strong>Створено:</strong></br> {{ task.created_at }}</li>
+                    <li class="bg-dark p-2 m-2 rounded">
+                        {{ task.task_description }}
+                    </li>
+                    <li>
+                        <strong>
+                            Bиконати до:</br>
+                            {% if task.deadline %}
+                                <span class="text-warning fw-bold">{{ task.deadline }}</span>
+                            {% else %}
+                                <span class="text-warning fw-bold">Завдання не закінчене</span>
+                            {% endif %}
+                        </strong>
+                    </li>
+                    <li>
+                        <strong>Статус:</strong></br>
+                         <a href="{% url 'task:task_update_status' pk=task.id %}" class="btn btn-success"> 
+                        {{ task.get_status_display }}
+                        </a> 
+                    </li>
+                    
+                    <hr class="bg-primary mt-3 mb-2" style="border-top: 3px double;">
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div> 
+
+    {% include "partials/paginator.html" %}
+
+{% endblock %}

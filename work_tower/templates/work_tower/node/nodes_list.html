@@ -1,0 +1,23 @@
+{% extends "work_tower/base_tower.html" %}
+
+{% block title %}Список вузлів{% endblock %}
+
+{% block content_area %}
+
+    {% include "partials/window_history_back.html" %}
+    
+    <div class="col-12">
+        <h4 class="text-center my-4 fs-10">Список вузлів</h4>
+    </div>
+    <div class="container justify-content-center">
+        <div class="row mb-5">
+            <div class="col-md-6 col-sm-12 text-white">
+            
+                {% for node in nodes %} 
+                    <p>{{ node.name }} {{ node.index }}({{ node.mcc }})</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}

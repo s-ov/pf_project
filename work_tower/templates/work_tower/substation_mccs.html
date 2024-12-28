@@ -1,0 +1,23 @@
+{% extends "work_tower/base_tower.html" %}
+
+{% block title %}{{ substation.title }}{% endblock %}
+
+{% block content_area %}
+    <div class="col-12">
+        <h3 class="text-center color2 my-4">{{ substation.title }}(відм. {{ substation.level }}м)</h3>
+    </div>
+
+    <div class="row mb-5">
+    {% for mcc in mccs %}
+        <div class="col-md-6 col-sm-12 text-white">
+            <h3 class="text-center border border-dark border-4 p-1">
+                <a href="{% url 'work_tower:mcc_detail' mcc_slug=mcc.slug %}" 
+                   style="text-decoration: none; color: white;">
+                    {{ mcc.title }}
+                </a>
+            </h3>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

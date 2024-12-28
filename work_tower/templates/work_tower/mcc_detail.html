@@ -1,0 +1,27 @@
+{% extends "work_tower/base_tower.html" %}
+
+{% block title %}{{ mcc.title }}{% endblock %}
+
+{% block content_area %}
+
+    <div class="col-md-6 mt-2">
+        <button onclick="window.history.back();" class="rounded">&larr; НАЗАД</button>
+    </div>
+    
+    <div class="col-12">
+        <h3 class="text-center text-uppercase color2 my-4">{{ mcc.title }}({{ mcc.substation }})</h3>
+    </div>
+
+    <div class="row mb-5">
+    {% for node in nodes %}
+        <div class="col-xl-4 col-md-6 col-sm-12 my-1 p-2">
+            <h6 class="text-center border border-dark border-4 p-1 rounded">
+                <a href="{% url 'work_tower:node_detail' node_id=node.id %}" style="text-decoration: none; color: white;">
+                    {{ node.name }} {{ node.index }}
+                </a>
+            </h6>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

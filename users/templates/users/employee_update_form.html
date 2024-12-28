@@ -1,0 +1,42 @@
+{% extends 'users/base_users.html' %}
+{% load static %}
+
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    
+    <div class="container mt-5">
+        {% include "partials/window_history_back.html" %}
+    </div>
+
+    <div class="container text-center">
+        <h3>{{ title }} {{ employee.first_name }} {{ employee.last_name }}</32>
+    </div>
+    
+    <div class="bg-primary text-white p-4 m-2 rounded">
+        <form 
+            {% comment %} id="update-admission-group-form"  {% endcomment %}
+            method="post" 
+            {% comment %} action="{% url 'users:admission_group_update' pk=employee.pk %}" {% endcomment %}
+            >
+            
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <button type="submit" class="btn btn-success">
+                Зберегти
+            </button>
+        </form>
+        <a 
+            href="{% url 'users:electricians_list' %}" 
+            class="btn btn-warning my-2">
+            Скасувати
+        </a>
+    </div>
+    
+{% endblock %}
+
+{% block scripts %}
+        <script src="{% static 'users/main.js' %}"></script>
+{% endblock scripts %}

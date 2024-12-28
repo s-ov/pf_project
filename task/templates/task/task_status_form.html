@@ -1,0 +1,27 @@
+{% extends "task/base_task.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content_area %}
+
+<div class="col-md-6 mt-5">
+    <button onclick="window.history.back();" class="rounded">&larr; НАЗАД</button>
+</div>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-6 col-sm-12">
+
+            <h4 class="text-center my-2">{{ title }}</h4>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">{{ title }}</button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

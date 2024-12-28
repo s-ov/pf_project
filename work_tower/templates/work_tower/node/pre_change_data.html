@@ -1,0 +1,27 @@
+{% extends "work_tower/base_tower.html" %}
+
+{% block title %}Внесення змін{% endblock %}
+
+{% block content_area %}
+
+    {% include "partials/window_history_back.html" %}
+    
+    <div class="col-12">
+        <h3 class="text-center my-4 fs-10">Виберіть опцію</h3>
+    </div>
+    <div class="container text-uppercase">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-6 col-sm-12 bg-white rounded">
+             
+                <p><a href="{% url 'work_tower:create_node_motor' %}"> Додати двигун </a></p>
+                <p><a href="{% url 'work_tower:create_node' %}"> Додати вузол </a></p>
+                <p><a href="{% url 'work_tower:update_motor' %}">Оновити двигун</a></p>
+                <p><a href="{% url 'work_tower:update_node' %}">Оновити вузол</a></p>       
+                <p><a href="{% url 'work_tower:delete_motor' %}">Видалити двигун</a></p>  
+                <p><a href="{% url 'work_tower:delete_node' %}">Видалити вузол</a></p> 
+
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "work_tower/base_tower.html" %}
+
+{% block title %}Оновити вузол{% endblock %}
+
+{% block content_area %}
+
+    {% include "partials/window_history_back.html" %}
+
+    <div class="col-12">
+        <h4 class="text-center text-uppercase my-4 fs-10">
+            Оновити вузол
+        </h4>
+    </div>
+    <div class="container justify-content-center">
+        <div class="row mb-5">
+            <div class="col-md-6 col-sm-12 text-white">
+
+                {% include "work_tower/node/index_form.html" %} 
+                
+                {% if node %}
+                    <h5 class="text-center text-uppercase my-4">
+                        Оновити дані вузла ({{ node.index }})
+                    </h5>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" name="update" class="btn btn-dark">Оновити</button>
+                    </form>
+
+                    {% if error %}
+                        <p>{{ error }}</p>
+                    {% endif %}
+                {% endif %}
+            
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}

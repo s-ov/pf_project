@@ -1,0 +1,67 @@
+<ul class="list-unstyled m-1 d-flex">
+    
+    {% if user.is_authenticated %} 
+        <li>
+            <a href="{% url 'work_tower:substations' %}"  
+            class="fw-bold text-white border border-dark p-2 mx-3 rounded fs-5">
+                Підстанції
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'work_tower:search_node' %}"  
+            class="fw-bold text-white border border-dark p-2 mx-3 rounded fs-5">
+                Знайти вузол
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'work_tower:get_level_nodes' %}"  
+            class="fw-bold text-white border border-dark p-2 mx-3 rounded fs-5">
+            Вузли на відмітці
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'work_tower:motors_list' %}"  
+            class="fw-bold text-white border border-dark p-2 mx-3 rounded fs-5">
+                Список двигунів
+            </a>
+        </li>
+        
+        {% if employee.role == 'Engineer' %} 
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle border border-dark" type="button" 
+                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Опції інженера
+                </button>
+                    
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li>
+                        <a class="dropdown-item" href="{% url 'work_tower:pre_change_data' %}">
+                            Додати/Оновити/Видалити двигун/вузол
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'workflow:task_doers_list' %}">
+                            Список електриків
+                        </a> 
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'workflow:create_task_assignment' %}">
+                            Створити завдання
+                        </a> 
+                    </li> 
+                </ul>
+            </div>
+        {% elif employee.role == 'Electrician' %} 
+            <li>
+                <a class="btn btn-dark px-3" type="button"
+                   href="{% url 'task:doer_tasks' doer_id=employee.id %}">
+                    Завдання {{ employee.first_name }} {{ employee.last_name }}
+                </a> 
+            </li>
+        {% endif %} 
+        
+    {% endif %} 
+</ul>
