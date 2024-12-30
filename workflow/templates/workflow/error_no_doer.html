@@ -1,8 +1,8 @@
-{% extends "task/base_task.html" %}
+{% extends "workflow/base_workflow.html" %}
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block content_area %}
+{% block content %}
     <div class="col-12">
         <h4 class="text-center my-4 bg-dark rounded">{{ title }}</h4>
     </div>
@@ -11,7 +11,7 @@
             <div class="col-md-6 col-sm-12 text-white">
 
             <p>{{ message }}</p>
-            <a href="{% url 'assignment:task_doers_list' %}" class="btn btn-success">
+            <a href="{% url 'workflow:task_doers_list' %}" class="btn btn-success">
                 Назад до Списку електриків
             </a>
             </div>

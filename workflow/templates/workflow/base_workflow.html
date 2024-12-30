@@ -1,0 +1,10 @@
+{% extends "task/base_task.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="conainer bg-primary m-2 rounded">
+        {% block content_workflow %}
+        {% endblock %}
+    </div>
+{% endblock %}

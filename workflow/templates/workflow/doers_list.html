@@ -1,14 +1,14 @@
-{% extends "base.html" %}
+{% extends "workflow/base_workflow.html" %}
 {% load custom_filters %}
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block content_area %}
-
+{% block content_workflow %}
+    
     <div class="mt-5">
         {% include 'partials/window_history_back.html' %}
     </div>
-
+    
     <div class="col-12 bg-info rounded">
         <h2 class="text-center my-4 fs-10">{{ title }}</h2>
     </div>
@@ -17,33 +17,33 @@
         <div class="row mb-5">
             <div class="col-md-6 col-sm-12 text-white">
                 <ul class="list-unstyled">
-                {% for doer in page_obj %}
-                    <li>{{ doer.first_name }} {{ doer.last_name }}</li>
-                    <li>{{ doer.cell_number|format_phone }}</li>
-                    {% if doer.email %}
-                        <li>{{ doer.email }}</li>
-                    {% else %}
-                        <li>Email не вказано</li>
-                    {% endif %}
-                    <li class="mb-2">
-                        {{ doer.admission_group }}</br>
-                        <a href="{% url 'users:update_admission_group' doer.id %}"
-                           class="text-dark bg-info mb-2 p-1">
-                            Оновити групу допуску
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'assignment:doer_tasks' doer.id %}" class="btn btn-success">
-                            Завдання
-                        <a>
-                    </li>
-                    <hr class=" bg-white double">
-                {% endfor %}
-                <ul>
+                    {% for doer in page_obj %}
+                        <li>{{ doer.first_name }} {{ doer.last_name }}</li>
+                        <li>{{ doer.cell_number|format_phone }}</li>
+                        {% if doer.email %}
+                            <li>{{ doer.email }}</li>
+                        {% else %}
+                            <li>Email не вказано</li>
+                        {% endif %}
+                        <li class="mb-2">
+                            {{ doer.admission_group }}</br>
+                            <a href="{% url 'users:update_admission_group' doer.id %}"
+                            class="text-dark bg-info mb-2 p-1">
+                                Оновити групу допуску
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'workflow:doer_tasks' doer.id %}" class="btn btn-success">
+                                Завдання
+                            <a>
+                        </li>
+                        <hr class=" bg-white double">
+                    {% endfor %}
+                    <ul>
+                </div>
             </div>
         </div>
-    </div>
 
-{% include "partials/paginator.html" %}
-
+    {% include "partials/paginator.html" %}
+    
 {% endblock %}

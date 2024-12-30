@@ -1,15 +1,15 @@
-{% extends "task/base_task.html" %}
+{% extends "workflow/base_workflow.html" %}
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block content_area %}
+{% block content_workflow %}
 
     <div class="col-12 mt-5">
         {% include 'partials/window_history_back.html' %}
     </div>
 
     <div class="col-12">
-        <h4 class="text-center my-4 bg-dark rounded">{{ title }}</h4>
+        <h4 class="text-center text-white my-3 p-1 bg-dark rounded">{{ title }}</h4>
     </div>
 
     <div class="container justify-content-center">
