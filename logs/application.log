@@ -1,0 +1,114 @@
+INFO 2025-01-04 15:41:59,737 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 15:42:07,276 basehttp "GET / HTTP/1.1" 200 2484
+INFO 2025-01-04 15:42:07,906 basehttp "GET /static/users/css/users_style.css HTTP/1.1" 304 0
+WARNING 2025-01-04 15:42:08,427 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+WARNING 2025-01-04 15:42:08,665 log Not Found: /favicon.ico
+WARNING 2025-01-04 15:42:08,666 basehttp "GET /favicon.ico HTTP/1.1" 404 2786
+INFO 2025-01-04 15:42:11,211 basehttp "GET /users/login/ HTTP/1.1" 200 3049
+WARNING 2025-01-04 15:42:11,307 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:42:28,884 basehttp "POST /users/login/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:42:28,966 basehttp "GET /users/employee_profile/3/ HTTP/1.1" 200 5001
+WARNING 2025-01-04 15:42:29,186 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:42:33,371 basehttp "GET /workflow/task_doers_list/ HTTP/1.1" 200 7073
+WARNING 2025-01-04 15:42:33,451 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:42:37,375 basehttp "GET /workflow/doer_tasks/2/ HTTP/1.1" 200 7078
+WARNING 2025-01-04 15:42:37,455 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:42:51,968 basehttp "GET /workflow/doer_tasks/4/ HTTP/1.1" 200 5126
+WARNING 2025-01-04 15:42:52,099 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:42:58,599 basehttp "GET /workflow/create_task_assignment/ HTTP/1.1" 200 5654
+WARNING 2025-01-04 15:42:58,649 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:43:29,343 basehttp "POST /workflow/create_task_assignment/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:43:29,372 basehttp "GET /workflow/task_doers_list/ HTTP/1.1" 200 7073
+WARNING 2025-01-04 15:43:29,470 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:43:32,132 basehttp "GET /workflow/doer_tasks/4/ HTTP/1.1" 200 6109
+WARNING 2025-01-04 15:43:32,207 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:43:47,812 basehttp "GET /users/update-admission-group/2/ HTTP/1.1" 200 4962
+WARNING 2025-01-04 15:43:48,067 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:43:59,588 basehttp "POST /users/update-admission-group/2/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:43:59,795 basehttp "GET /users/electricians_list HTTP/1.1" 200 7018
+WARNING 2025-01-04 15:43:59,880 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:44:10,681 basehttp "GET /users/update-admission-group/2/ HTTP/1.1" 200 4962
+WARNING 2025-01-04 15:44:10,770 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:44:17,208 basehttp "POST /users/update-admission-group/2/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:44:17,252 basehttp "GET /users/electricians_list HTTP/1.1" 200 7014
+WARNING 2025-01-04 15:44:17,342 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:44:34,199 basehttp "GET /workflow/create_task_assignment/ HTTP/1.1" 200 5654
+WARNING 2025-01-04 15:44:34,294 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:44:49,523 basehttp "POST /workflow/create_task_assignment/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:44:49,566 basehttp "GET /workflow/task_doers_list/ HTTP/1.1" 200 7073
+WARNING 2025-01-04 15:44:49,676 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:44:54,664 basehttp "GET /workflow/create_task_assignment/ HTTP/1.1" 200 5654
+WARNING 2025-01-04 15:44:54,772 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:45:14,867 basehttp "POST /workflow/create_task_assignment/ HTTP/1.1" 302 0
+INFO 2025-01-04 15:45:14,908 basehttp "GET /workflow/task_doers_list/ HTTP/1.1" 200 7073
+WARNING 2025-01-04 15:45:14,974 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 15:47:40,172 autoreload /home/s-ovsiuk/pf_project/config/settings.py changed, reloading.
+INFO 2025-01-04 16:10:45,258 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:10:50,865 basehttp "GET / HTTP/1.1" 200 4617
+WARNING 2025-01-04 16:10:52,088 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 16:10:57,386 basehttp "GET /users/logout/ HTTP/1.1" 302 0
+INFO 2025-01-04 16:10:57,402 basehttp "GET / HTTP/1.1" 200 2484
+WARNING 2025-01-04 16:10:57,494 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-04 16:11:02,825 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-01-04 16:11:02,993 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4668
+INFO 2025-01-04 16:11:03,097 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,097 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,118 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,196 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,371 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,391 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,400 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:03,899 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:30,177 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4381
+INFO 2025-01-04 16:11:51,216 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-01-04 16:11:51,347 basehttp "GET /admin/ HTTP/1.1" 200 15783
+INFO 2025-01-04 16:11:51,682 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:51,901 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:51,913 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:51,977 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:58,638 basehttp "GET /admin/django_celery_beat/periodictask/add/ HTTP/1.1" 200 36253
+INFO 2025-01-04 16:11:58,868 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 12183
+INFO 2025-01-04 16:11:59,002 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,090 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,173 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,238 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,420 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,477 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,645 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,646 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,717 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,774 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,787 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,826 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,855 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,862 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,871 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:11:59,934 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:12:00,157 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:12:00,191 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:13,088 basehttp "GET /admin/django_celery_beat/intervalschedule/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8429
+INFO 2025-01-04 16:14:13,153 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 12183
+INFO 2025-01-04 16:14:13,459 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:13,554 basehttp "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:31,861 basehttp "POST /admin/django_celery_beat/intervalschedule/add/?_to_field=id&_popup=1 HTTP/1.1" 200 370
+INFO 2025-01-04 16:14:31,986 basehttp "GET /static/admin/js/popup_response.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:42,437 basehttp "POST /admin/django_celery_beat/periodictask/add/ HTTP/1.1" 302 0
+INFO 2025-01-04 16:14:42,624 basehttp "GET /admin/django_celery_beat/periodictask/ HTTP/1.1" 200 19026
+INFO 2025-01-04 16:14:42,749 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 12183
+INFO 2025-01-04 16:14:42,959 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:43,000 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:43,260 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:43,386 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-01-04 16:14:43,524 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-01-04 16:22:59,964 autoreload /home/s-ovsiuk/pf_project/config/__init__.py changed, reloading.
+INFO 2025-01-04 16:23:01,012 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:23:56,398 autoreload /home/s-ovsiuk/pf_project/config/__init__.py changed, reloading.
+INFO 2025-01-04 16:23:57,773 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:35:34,711 autoreload /home/s-ovsiuk/pf_project/config/settings.py changed, reloading.
+INFO 2025-01-04 16:35:40,126 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:35:45,756 autoreload /home/s-ovsiuk/pf_project/config/settings.py changed, reloading.
+INFO 2025-01-04 16:35:46,955 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:35:58,709 autoreload /home/s-ovsiuk/pf_project/config/settings.py changed, reloading.
+INFO 2025-01-04 16:35:59,804 autoreload Watching for file changes with StatReloader
+INFO 2025-01-04 16:36:14,661 autoreload /home/s-ovsiuk/pf_project/config/settings.py changed, reloading.
+INFO 2025-01-04 16:36:15,583 autoreload Watching for file changes with StatReloader

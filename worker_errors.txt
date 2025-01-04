@@ -1,0 +1,22 @@
+1. No Hostname Was Supplied Warning
+    No hostname was supplied. Reverting to default 'localhost'
+    This message is typically harmless but indicates that Celery is defaulting 
+    to a generic hostname (localhost). If you're running the worker locally, 
+    this warning can generally be ignored. However, for clarity and explicitness, 
+    you can set the hostname explicitly when starting the worker.
+
+    Solution: Use the --hostname flag to set a hostname explicitly:
+    celery -A config worker --loglevel=info -E --hostname=worker1@%h
+
+    - worker1 is the desired worker name.
+    - %h is a placeholder that resolves to the machine's hostname.
+
+
+4. Run the Celery Worker and Beat Scheduler
+    Start the Celery worker and beat scheduler processes:
+
+    Start the Celery worker:
+    celery -A config worker --loglevel=info
+    
+    Start the Celery beat scheduler:
+    celery -A config beat --loglevel=info

@@ -8,7 +8,7 @@ from .views import (
 
 app_name = "workflow"
 
-urlpatterns = [m
+urlpatterns = [
     path(
         'create_task_assignment/', 
         create_task_assignment_view, 

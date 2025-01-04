@@ -5,16 +5,15 @@ from decouple import config
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 SECRET_KEY = config('SECRET_KEY')
 
 TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = config("TWILIO_PHONE_NUMBER")
 
-# CELERY_BROKER_URL = 'redis://localhost:6379/0'  
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Example broker
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
 # CELERY_ACCEPT_CONTENT = ['json']
 # CELERY_TASK_SERIALIZER = 'json'
 # CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_twilio',
-    # 'django_celery_beat',
+    'django_celery_beat',
 
     'users.apps.UsersConfig',
     'work_tower.apps.WorkTowerConfig',
@@ -129,43 +128,43 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 logging.basicConfig(level=logging.DEBUG)
 LOGGING = {
-    # 'version': 1,
-    # 'disable_existing_loggers': False,
-    # 'formatters': {
-    #     'verbose': {
-    #         'format': '{levelname} {asctime} {module} {message}',
-    #         'style': '{',
-    #     },
-    # },
-    # 'handlers': {
-    #     'console': {
-    #         'level': 'DEBUG',
-    #         'class': 'logging.StreamHandler',
-    #         'formatter': 'verbose',
-    #     },
-    #     'file': {
-    #         'level': 'INFO',
-    #         'class': 'logging.FileHandler',
-    #         'filename': os.path.join(BASE_DIR, 'logs', 'application.log'),
-    #         'formatter': 'verbose',
-    #     },
-    # },
-    # 'loggers': {
-    #     'django': {
-    #         'handlers': ['console', 'file'],
-    #         'level': 'INFO',
-    #         'propagate': True,
-    #     },
-    #     '__main__': {
-    #         'handlers': ['console', 'file'],
-    #         'level': 'DEBUG',
-    #         'propagate': False,
-    #     },
-    #     'users': {  
-    #         'handlers': ['console', 'file'],
-    #         'level': 'DEBUG',
-    #     },
-    # },
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'application.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        '__main__': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'users': {  
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+        },
+    },
 }
 
 # Default primary key field type
