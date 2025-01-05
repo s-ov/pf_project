@@ -124,7 +124,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_HOST = 'smtp.gmail.com'  # For Gmail. Use the SMTP host of your email provider.
+EMAIL_HOST = "127.0.0.1" 
+EMAIL_PORT = 587  # Typically 25, 465, or 587. Port for TLS (use 465 for SSL)
+# EMAIL_USE_TLS = False  # Or False, depending on your SMTP configuration
+EMAIL_USE_TLS = True  # Use TLS (use EMAIL_USE_SSL = True for SSL)
+EMAIL_USE_SSL = False  # Set to True if using SSL
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = 'some.mail@gmail.com'
+
 
 logging.basicConfig(level=logging.DEBUG)
 LOGGING = {

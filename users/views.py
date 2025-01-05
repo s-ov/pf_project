@@ -17,7 +17,7 @@ from django.contrib.auth import (
 from django.core.mail import send_mail
 from django.urls import reverse
 from django.utils.http import urlencode
-
+from django.http import HttpResponse
 
 from .forms import (
     UserLoginForm,
@@ -27,7 +27,8 @@ from .forms import (
     UserPasswordCheckForm,
     VerificationCodeForm,
     )
-from .utils import generate_verification_code
+from .utils import generate_verification_code, generate_password
+
 
 logger = logging.getLogger(__name__)
 
@@ -181,8 +182,10 @@ def check_user_view(request):
             return redirect(reverse('users:verify_code'))
         else:
             return render(request, 'users/check_user.html', {'form': form})
-    context = {'form': UserCredentialsForm(), 'title': 'Перевірка користувача',}
-
+    context = {
+        'form': UserCredentialsForm(), 
+        'title': 'Перевірка користувача',
+    }
     return render(request, 'users/check_user.html', context,)
 
 
@@ -199,10 +202,17 @@ def verify_code_view(request):
             user.backend = f"{backend.__module__}.{backend.__class__.__name__}"
             login(request, user)
 
+            password = generate_password()
+            raw_password = password
+            user.set_password(password)  
+            user.save()
+
             del request.session['verification_code']
             del request.session['user_id']
 
-            return redirect('users:employee_profile', employee_id=user_id)
+            return HttpResponse(
+                f"<h1 class='text-green fw-bold'>Ваш пароль: {raw_password} Нікому не передавати!</h1>"
+                )
         else:
             return render(
                 request,
