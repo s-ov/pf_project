@@ -1,4 +1,5 @@
 .env
 venv
 db.sqlite3
-touch worker_errors.txt
+worker_errors.txt
+data_replace.txt

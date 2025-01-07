@@ -11,12 +11,12 @@ TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = config("TWILIO_PHONE_NUMBER")
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Example broker
+CELERY_BROKER_URL = 'redis://localhost:6379/0' 
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
-# CELERY_ACCEPT_CONTENT = ['json']
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -79,10 +79,20 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST', default='localhost'),
+        'PORT': config('DATABASE_PORT', default='   '),
     }
 }
 
@@ -126,12 +136,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-# EMAIL_HOST = 'smtp.gmail.com'  # For Gmail. Use the SMTP host of your email provider.
+# EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_HOST = "127.0.0.1" 
-EMAIL_PORT = 587  # Typically 25, 465, or 587. Port for TLS (use 465 for SSL)
-# EMAIL_USE_TLS = False  # Or False, depending on your SMTP configuration
-EMAIL_USE_TLS = True  # Use TLS (use EMAIL_USE_SSL = True for SSL)
-EMAIL_USE_SSL = False  # Set to True if using SSL
+EMAIL_PORT = 587  
+EMAIL_USE_TLS = True  
+EMAIL_USE_SSL = False  
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = 'some.mail@gmail.com'
