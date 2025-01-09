@@ -59,7 +59,11 @@ class TaskStatusUpdateView(UpdateView):
             task.delete()
             return task_update_message(request, Task.TaskStatus.CANCELED) 
         
-        if new_status in [Task.TaskStatus.COMPLETED, Task.TaskStatus.PENDING, Task.TaskStatus.IN_PROGRESS]:
+        if new_status in [
+            Task.TaskStatus.COMPLETED, 
+            Task.TaskStatus.PENDING, 
+            Task.TaskStatus.IN_PROGRESS,
+            ]:
             task.status = new_status
 
             if new_status == Task.TaskStatus.PENDING:

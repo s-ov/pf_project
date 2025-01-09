@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic import TemplateView 
 
+from debug_toolbar.toolbar import debug_toolbar_urls
+
 
 admin.site.site_header = "Energy Unit's Admin"
 
@@ -18,5 +20,8 @@ urlpatterns = [
     path('users/', include(('users.urls', 'users'), namespace='users')),
     path('work_tower/', include(('work_tower.urls', 'work_tower'), namespace='work_tower')),
     path('task/', include(('task.urls', 'task'), namespace='task')),
-    path('workflow/', include(('workflow.urls', 'workflow'), namespace='workflow')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('workflow/', include(('workflow.urls', 'workflow'), namespace='workflow'),
+         ),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
+  + debug_toolbar_urls()
