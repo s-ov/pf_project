@@ -1,1 +1,17 @@
-
+INFO 2025-01-11 13:15:46,828 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:16:02,208 basehttp "GET / HTTP/1.1" 200 14417
+WARNING 2025-01-11 13:16:02,608 basehttp "GET /static/css/main.css HTTP/1.1" 404 1896
+INFO 2025-01-11 13:20:42,540 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:21:54,620 autoreload /home/s-ovsiuk/pf_project/task/apps.py changed, reloading.
+INFO 2025-01-11 13:21:55,538 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:21:58,049 autoreload /home/s-ovsiuk/pf_project/task/apps.py changed, reloading.
+INFO 2025-01-11 13:21:59,315 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:22:00,957 autoreload /home/s-ovsiuk/pf_project/task/apps.py changed, reloading.
+INFO 2025-01-11 13:22:02,374 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:22:25,281 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:22:51,492 autoreload /home/s-ovsiuk/pf_project/task/tasks.py changed, reloading.
+INFO 2025-01-11 13:22:52,461 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:22:55,956 autoreload /home/s-ovsiuk/pf_project/task/tasks.py changed, reloading.
+INFO 2025-01-11 13:22:56,950 autoreload Watching for file changes with StatReloader
+INFO 2025-01-11 13:23:06,576 autoreload /home/s-ovsiuk/pf_project/task/tasks.py changed, reloading.
+INFO 2025-01-11 13:23:08,051 autoreload Watching for file changes with StatReloader

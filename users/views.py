@@ -206,12 +206,12 @@ def verify_code_view(request):
             raw_password = password
             user.set_password(password)  
             user.save()
-
+            print(raw_password)
             del request.session['verification_code']
             del request.session['user_id']
 
             return HttpResponse(
-                f"<h1 class='text-green fw-bold'>Ваш пароль: {raw_password} Нікому не передавати!</h1>"
+                f"<h1 class='text-center'>Ваш пароль: {raw_password} Нікому не передавати!</h1>"
                 )
         else:
             return render(

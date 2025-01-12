@@ -15,6 +15,8 @@
     <div class="container justify-content-center">
         <div class="row mb-5">
             <div class="col-md-6 col-sm-12 text-white">
+
+            {% if page_obj %}    
                 <ul class="list-unstyled">
                 {% for task in page_obj %} 
                     
@@ -43,6 +45,9 @@
                 {% endfor %}
                 </ul>
             </div>
+            {% else %}
+                <h5 class="bg-info ml-2 p-1 rounded">Завдання немає</h5>
+            {% endif %}
         </div>
     </div> 
 

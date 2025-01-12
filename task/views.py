@@ -21,11 +21,13 @@ class DoerTasksListView(ListView):
     template_name = 'task/doer_tasks.html'  
     context_object_name = 'tasks'
     paginate_by = 2
-
+    
     def get_queryset(self):
         doer_id = self.kwargs.get('doer_id')
-        doer = get_object_or_404(get_user_model(), id=doer_id)
-        
+        doer = get_object_or_404(
+            get_user_model().objects.select_related('employee'), 
+            id=doer_id,
+            )
         return Task.objects.filter(doer=doer)
     
     def get_context_data(self, **kwargs):

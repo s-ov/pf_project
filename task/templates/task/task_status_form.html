@@ -2,11 +2,11 @@
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block content_area %}
-
-<div class="col-md-6 mt-5">
-    <button onclick="window.history.back();" class="rounded">&larr; НАЗАД</button>
-</div>
+{% block content %}
+<div class="container bg-primary mt-5 p-2 rounded">
+    <div class="col-md-6 mt-5">
+        <button onclick="window.history.back();" class="rounded">&larr; НАЗАД</button>
+    </div>
 
     <div class="container">
         <div class="row mb-5">
@@ -23,5 +23,6 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

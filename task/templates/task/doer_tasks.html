@@ -2,7 +2,8 @@
 
 {% block title %}{{ title }}: {{ task.doer.first_name }} {{ task.doer.last_name }}{% endblock %}
 
-{% block content_area %}
+{% block content %}
+<div class="container bg-primary mt-5 p-2 rounded">
 
     {% include 'partials/window_history_back.html' %}
     <div class="col-12">
@@ -13,6 +14,7 @@
     
     <div class="container justify-content-center">
         <div class="row mb-5">
+        {% if page_obj %}
             {% for task in page_obj %} 
             
             <div class="col-md-6 col-sm-12 text-white">
@@ -45,8 +47,11 @@
                 </ul>
             </div>
         </div>
+        {% else %}
+            <h5 class="bg-info ml-2 p-1 rounded">Завдання немає.</h6>
+        {% endif %}
     </div> 
 
     {% include "partials/paginator.html" %}
-
+</div>
 {% endblock %}

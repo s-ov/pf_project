@@ -11,7 +11,7 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
-def reset_deadlines_task():
+def reset_deadlines():
     """Set deadline to NULL for tasks with past or current deadlines."""
     now = datetime.now(timezone.utc)
     tasks_to_update = Task.objects.filter(deadline__lte=now)
@@ -30,7 +30,7 @@ class Command(BaseCommand):
     help = "Set deadline to NULL for tasks with past or current deadlines"
 
     def handle(self, *args, **kwargs):
-        updated_count = reset_deadlines_task()
+        updated_count = reset_deadlines()
         self.stdout.write(self.style.SUCCESS(
             f"Updated {updated_count} tasks with past deadlines.",
             )
